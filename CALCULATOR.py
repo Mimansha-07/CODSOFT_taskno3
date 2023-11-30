@@ -27,15 +27,14 @@ def calculate_square_root():
         entry.delete(0, tk.END)
         entry.insert(tk.END, "Error")
 
-# Create the main window
+
 root = tk.Tk()
 root.title("Calculator")
 
-# Entry widget for displaying the input and result
 entry = tk.Entry(root, width=22, font=('Arial', 16))
 entry.grid(row=0, column=0, columnspan=4)
 
-# Buttons
+
 button_texts = [
     'C', '√', '/', '<-',
     '7', '8', '9', '*',
@@ -44,7 +43,7 @@ button_texts = [
     '!', '0', '.', '='  
 ]
 
-# Create buttons dynamically using a nested loop
+
 row_val = 1
 for i in range(5):
     for j in range(4):
