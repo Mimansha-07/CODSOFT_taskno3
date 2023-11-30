@@ -9,9 +9,6 @@ def generate_password():
     password = ''.join(random.choice(characters) for _ in range(length))
     result_var.set(password)
     password_history.insert(0, f"{password}  ({length} characters)")
-
-def accept_password():
-    accepted_passwords.insert(tk.END, result_var.get())
     
 pg = tk.Tk()
 pg.title("Password Generator")
@@ -39,11 +36,5 @@ result_label.grid(row=3, column=0, columnspan=2, pady=5)
 
 password_history = tk.Listbox(frame, height=2, selectbackground="lightgrey", selectmode=tk.SINGLE)
 password_history.grid(row=4, column=0, columnspan=2, pady=4, sticky=tk.W+tk.E)
-
-accept_button = ttk.Button(frame, text="Accept", command=accept_password)
-accept_button.grid(row=5, column=0, pady=5)
-
-reject_button = ttk.Button(frame, text="Reject", command=lambda: result_var.set(""))
-reject_button.grid(row=5, column=1, pady=5)
 
 pg.mainloop()
