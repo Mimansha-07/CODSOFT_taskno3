@@ -11,10 +11,10 @@ def generate_password():
     password_history.insert(0, f"{password}  ({length} characters)")
 
 # Create the main window
-root = tk.Tk()
-root.title("Password Generator")
+pg = tk.Tk()
+pg.title("Password Generator")
 # Create and configure the frame
-frame = ttk.Frame(root, padding="10")
+frame = ttk.Frame(pg, padding="10")
 frame.grid(row=0, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
 # Add widgets to the frame
@@ -40,7 +40,6 @@ password_history.grid(row=4, column=0, columnspan=2, pady=4, sticky=tk.W+tk.E)
 
 def accept_password():
     accepted_passwords.insert(tk.END, result_var.get())
-    if 
 accept_button = ttk.Button(frame, text="Accept", command=accept_password)
 accept_button.grid(row=5, column=0, pady=5)
 
@@ -48,4 +47,4 @@ reject_button = ttk.Button(frame, text="Reject", command=lambda: result_var.set(
 reject_button.grid(row=5, column=1, pady=5)
 
 # Run the main loop
-root.mainloop()
+pg.mainloop()
