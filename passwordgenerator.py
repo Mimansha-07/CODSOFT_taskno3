@@ -17,7 +17,10 @@ box.title("Password Generator")
 
 # Create and configure the frame
 frame = ttk.Frame(box, padding="10")
+frame.title(password generator)
 frame.grid(row=6, column=8)
+entry = tk.Entry(box, width=22)
+entry.grid(row=0, cloumn=0, columnspan=5)
 
 # Add widgets to the frame
 generate_button = ttk.Button(frame, text="Generate Password", command=generate_password)
