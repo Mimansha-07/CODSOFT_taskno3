@@ -6,14 +6,12 @@ from tkinter import messagebox as mb
 qgame= tk.Tk()
 qgame.title("quiz game")
 frame = ttk.Frame(qgame, padding="10")
-result_label = ttk.Label(frame, text="Generated Password:", font=('Helvetica', 10, 'bold'))
-result_label.grid(row=3, column=0, columnspan=2, pady=5)
+
 
 questions = [
     {"question": "Who is the leader of BTS?", "options": ["A. Kim Seokjin", "B. JK", "C. Jimin","D.Kim Namjoon"], "correct_answer": "D"},
     {"question": "What is the capital of France?", "options": ["A. Berlin", "B. Madrid", "C. Paris","D.Delhi"], "correct_answer": "C"},
     {"question": "What is the largest planet in our solar system?", "options": ["A. Earth", "B. Jupiter", "C. Mars","D. Neptune"], "correct_answer": "B"},
-    # Add more questions as needed
 ]
 random.shuffle(questions)
 def ask_question(question_data):
